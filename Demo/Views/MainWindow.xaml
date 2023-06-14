@@ -1,0 +1,41 @@
+﻿<rxui:ReactiveWindow
+    x:Class="Demo.Views.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:Demo"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:rxui="http://reactiveui.net"
+    xmlns:vms="clr-namespace:Demo.ViewModels"
+    Title="Nuget Browser"
+    Width="800"
+    Height="450"
+    x:TypeArguments="vms:AppViewModel"
+    mc:Ignorable="d">
+    <Grid Margin="12">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <TextBlock
+            VerticalAlignment="Center"
+            FontSize="16"
+            FontWeight="SemiBold"
+            Text="Search for:" />
+        <TextBox
+            x:Name="serachTextBox"
+            Grid.Column="1"
+            Margin="6,0,0,0" />
+        <ListBox
+            x:Name="searchResultsListBox"
+            Grid.Row="1"
+            Grid.ColumnSpan="2"
+            Margin="0,6,0,0"
+            HorizontalContentAlignment="Stretch"
+            ScrollViewer.HorizontalScrollBarVisibility="Disabled" />
+    </Grid>
+</rxui:ReactiveWindow>
